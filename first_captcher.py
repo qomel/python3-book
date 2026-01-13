@@ -56,7 +56,12 @@ def three_4():
     print(goscie)
     
 def three_8():
-   place = ['tokyo', 'paris', 'new york', 'sydney', 'rome']    
+   place = ['tokyo',
+            'paris',
+            'new york',
+            'sydney',
+            'rome'
+            ]    
    print(place)
    print(sorted(place))
    print(place)
@@ -89,6 +94,32 @@ def three_10():
     print(sorted(rivers))
     print(len(city))
     
-three_10()
-
+def four_13():
+    bufet = ('ciasto', 'obiad', 'sniadanie', 'kolacja', 'podwieczorek')
+    for i in bufet:
+        print(i)
+    # bufet[1] = 'jedzenie'
     
+    bufet = ('\nzamknietę',)
+    for i in bufet:
+        print(i)
+
+def cars_py5():
+    cars = ['audi',
+            'bmw',
+            'honda',
+            'kiv',
+            'reanulte',
+            'porsche'
+            ]
+    
+    for car in cars:
+        if car == 'bmw':
+            print(car.upper())
+        else:
+            print(car.title())
+    
+    
+cars_py5()
+
+ 
