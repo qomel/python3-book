@@ -89,6 +89,132 @@ def three_10():
     print(sorted(rivers))
     print(len(city))
     
-three_10()
-
+def six_1():
+    people = {
+        'first': 'Dominik', 
+        'last': 'Pazurek',
+        'age': '23',
+        'city': 'gliwice'
+              }
     
+    print(people)
+    
+    numbers = {
+        'michalina': '8',
+        'dominik': '10'
+        }
+    
+    print(f'Ulubionym numerem {numbers['dominik']}')
+    print(f'Ulubionym numerem {numbers['michalina']}')
+    
+    glosariusz = {
+        'dictionary': 'cos w stylu listy dynamicznej ale ma key-value',
+        'tuple': 'lista której nie da się modyfikować',
+        'not / in': 'czy ta zmeina znajduje się/czy nie w liście'
+    }
+    
+    for key, value in  glosariusz.items():
+        print(key + ': ' + value)
+    
+    
+def six_4():
+    
+    glosariusz = {
+        'dictionary': 'cos w stylu listy dynamicznej ale ma key-value',
+        'tuple': 'lista której nie da się modyfikować',
+        'not / in': 'czy ta zmeina znajduje się/czy nie w liście'
+    }
+    
+    for key, value in  glosariusz.items():
+        print(key + ': ' + value)
+        
+    glosariusz['PEP8'] = 'jest to ustalony rodzaj formatowania kody w python'
+    
+    rzeki = {
+        'wisla': 'warszawa',
+        'odra': 'raciborz',
+        'rudka': 'kuznia'
+        }
+    
+    for k, v in rzeki.items():
+        print(k.title() + ' przepływa przez ' + v.title())
+        
+    for k in rzeki.keys():
+        print(k.lower())
+
+    for v in rzeki.values():
+        print(v.upper())
+    
+    ankieta = {
+        'dominik': 'Python',
+        'michalina': 'C',
+        'kamil': 'Rust'
+    }
+    
+    nie_wzieły_ankiety = {
+        'dominik', 'adam'
+    }
+    
+    for name in nie_wzieły_ankiety:
+        if name in ankieta:
+            print(f'Dziękuje za ankiete {name.title()}')
+        else:
+            print(f'Prosze o wziecie udzialu {name.title()}')
+            
+
+def six_7():
+        people1 = {
+        'first': 'Dominik', 
+        'last': 'Pazurek',
+        'age': '23',
+        'city': 'gliwice'
+        }
+        
+        people2 = {
+        'first': 'Michalina', 
+        'last': 'Knieja',
+        'age': '22',
+        'city': 'gliwice'
+        }
+        
+        people3 = {
+        'first': 'Kamil', 
+        'last': 'Pazurek',
+        'age': '15',
+        'city': 'kuźnia'
+        }
+        
+        people = [people1, people2, people3]
+        
+        for user in people:
+            print(user)
+            
+        places = {
+            'dominik': ['gl', 'sk', 'rck'],
+            'michalina': ['sk', 'mk', 'ny'],
+            'kamil': ['rck', 'tk', 'sp']
+        }
+        
+        for place in places.items():
+            print(place)
+            
+        citys = {
+            'tokyo': {
+                'where': 'Asia',
+                'valute': 'yen'
+            },
+            
+            'warsaw': {
+                'where': 'Europe',
+                'valute': 'pln'
+            }
+        }
+        
+        for city, info in citys.items():
+            print(city.title())
+            if info['valute'] is 'pln':
+                print(info['valute'].upper())
+            else:
+                print('Ang')
+            print(f'Country in: {info['where']}')
+six_7()
