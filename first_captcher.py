@@ -217,4 +217,27 @@ def six_7():
             else:
                 print('Ang')
             print(f'Country in: {info['where']}')
-six_7()
+
+def seven_1():
+    marka = input('Jaki Pan potrzebuje marki samochodu: ')
+    print(f'Sprawdzam czy jest {marka}')
+    
+def seven_2():
+    number = input('na ile osób stoilik: ')
+    number = int(number)
+    
+    if number >= 8:
+        print('Trzbea poczekac na większy stolik')
+    else:
+        print('Prosze wejść')
+
+def seven_3():
+    number = input('Podaj dowolną liczbę: ')
+    number = int(number)
+    
+    if number % 10 == 0:
+        print('To jest wielokrtonsc 10')
+    else:
+        print('To nie jest wielokrotność 10')
+    
+seven_3()
