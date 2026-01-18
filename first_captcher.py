@@ -217,7 +217,7 @@ def six_7():
         
         for city, info in citys.items():
             print(city.title())
-            if info['valute'] is 'pln':
+            if info['valute'] == 'pln':
                 print(info['valute'].upper())
             else:
                 print('Ang')
@@ -245,4 +245,76 @@ def seven_3():
     else:
         print('To nie jest wielokrotność 10')
     
-seven_3()
+def seven_4():
+    lista_dodatkow = []
+    dodatki = ""
+    
+    while dodatki != 'koniec':
+        dodatki = input('Jakie dodatki na pizze? ')
+        if dodatki == 'koniec':
+            break
+        lista_dodatkow.append(dodatki)
+        print(*lista_dodatkow)
+
+def seven_5():
+    active = True
+    
+    while active != False:
+        age = input('Ile masz la: ')
+        age = int(age)
+        
+        if age <= 3:
+            print('Za darmo')
+        elif age in range(3, 12):
+            print('10zł bilet')
+        elif age == 888:
+            active = False
+        elif age >= 12:
+            print('15zl')
+        else:
+            print('Zły foramt')
+            
+def seven_8():
+    sandwich_orders = ['Kanpka', 'Croissant', 'Bagietka', 'Sandwich']
+    finished_sandwich = []
+    
+    while sandwich_orders:
+        curret_sandwich = sandwich_orders.pop()
+        
+        print(f'{curret_sandwich} jest gotowa')
+        finished_sandwich.append(curret_sandwich)
+    
+    print(f'Gotowe: {finished_sandwich}')
+
+def seven_9():
+    sandwich = ['Kanapka', 'Croissant', 'Kanapka', 
+                'Bagietka', 'Sandwich', 'Kanapka']
+    i = 0
+    print(sandwich)
+    while 'Kanapka' in sandwich:
+        i += 1
+        sandwich.remove('Kanapka')
+        print(f'Usnieto x{i}')
+        
+    print(sandwich)
+    
+def seven_10():
+    responses = {}
+    polling_active = True
+    
+    while polling_active:
+        name = input('\nJak masz na imie ')
+        response = input('Gdzie chciał/a byś poleciec na wakajce ')
+        
+        responses[name] = response
+        
+        repeat = input('Ktoś jescze tak/nie?')
+        if repeat == 'nie':
+            polling_active = False
+            
+    print('\n---Wyniki---')
+    for name, resposne in responses.items():
+        print(f'{name} chciałby poleciec {resposne}')
+    
+
+seven_10()
