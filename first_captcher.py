@@ -56,7 +56,12 @@ def three_4():
     print(goscie)
     
 def three_8():
-   place = ['tokyo', 'paris', 'new york', 'sydney', 'rome']    
+   place = ['tokyo',
+            'paris',
+            'new york',
+            'sydney',
+            'rome'
+            ]    
    print(place)
    print(sorted(place))
    print(place)
