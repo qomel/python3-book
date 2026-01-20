@@ -317,4 +317,7 @@ def seven_10():
         print(f'{name} chciałby poleciec {resposne}')
     
 
-seven_10()
+def eight_2(title):
+    print(f'Ulubiona książka: {title}')
+
+# eight_2('Python')
