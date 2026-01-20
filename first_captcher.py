@@ -336,3 +336,156 @@ def eight_4():
     
     make_shirt('L')
     make_shirt('m')
+    make_shirt('m', 'elo elo')
+
+def eight_5():
+    def describe_city(city, country='kraju'):
+        print(f'{city} leży w {country}')
+    
+    describe_city('Warszawa', 'Polska')
+    describe_city('Gdzieś')
+    describe_city('','elo')
+        
+def eight_6():
+    """Wyświetla 'miasto, kraj' """
+    def city_country(city, countery):
+        cityCountry = f"{city}, {countery}"
+        return cityCountry
+    
+    city = city_country('Warsz', 'Polska')
+    print(city)
+
+def eight_7():
+    def make_albums(title ,band="", artist="", many=None):
+        
+        album = {'title': title}
+        if band:
+            album['band'] = band
+        if artist:
+            album['artist'] = artist
+        if many:
+            album['how many'] = many
+        return album
+    musican = make_albums('Okoń', 'Karpiki', 'Wędkarz')
+    musican2 = make_albums('Mrowik', 'Chujki')
+    musican3 = make_albums('Alku', '', 'Mordka')
+    musican4 = make_albums('Alku', '', 'Mordka', 5)
+    
+    print(musican3)
+    
+    
+def eight_8():
+    
+    def make_albums(title ,band="", artist="", many=None):
+        
+        album = {'title': title}
+        if band:
+            album['band'] = band
+        if artist:
+            album['artist'] = artist
+        if many:
+            album['how many'] = many
+        return album
+    
+    while True:
+        print('\nProsze podać nazwe albumu, zespół lub artyste,' 
+              ' można dodać ilość utworów')
+        print('Wpisz "q", aby zatrzymać program w dowonlnym momencie')
+        
+        title = input('Tytuł albumu: ')
+        if title == 'q':
+            break
+        
+        band = input('Nazwa zespołu (jeśli nie ma kliknij ENTER): ')
+        if band == 'q':
+            break
+        
+        artist = input('Jak nazywa się artysta (jeśli nie ma kliknij ENTER):')
+        if artist == 'q':
+            break
+        
+        many = input('Ile jest utworów (pomiń klikająć ENTER): ')
+        if many == 'q':
+            break
+        
+        album = make_albums(title, band, artist, many)
+        print(album)
+        
+def eight_9():
+    
+    def show_messages(messages):
+        """Wyświetelnie komunikatów"""
+        for message in messages:
+            print(f'{message}')
+            
+    messages = ['elo', 'siema', 'co tam?']
+    show_messages(messages)
+
+def eight_10():
+    
+    def send_message(messages):
+        """Wysyłanie wiadmości"""
+        while messages:
+            current_message = messages.pop()
+            print(current_message)
+            sent_messages.append(current_message)
+            
+    messages = ['elo', 'siema', 'co tam?']
+    sent_messages = []
+    
+    send_message(messages)
+    print(f'lista wysłanych: {sent_messages}')
+
+def eight_11():
+    
+    def send_message(messages):
+        """Wysyłanie wiadmości"""
+        while messages[:]:
+            current_message = messages.pop()
+            print(current_message)
+            sent_messages.append(current_message)
+            
+    messages = ['elo', 'siema', 'co tam?']
+    sent_messages = []
+    # lista archi jest pełna ponieważ zostałą do funkcji wrzuocna kopia
+    send_message(messages[:])
+    print(f'lista wysłanych: {sent_messages}')
+    print(f'lista archi: {messages}')
+
+def eight_12():
+    
+    def sandwich(*toppings):
+        print('\nW twojej kanpace będzie znajdować się: ')
+        for topping in toppings:
+            print(f'- {topping.lower()}')
+            
+    sandwich('Sałata', 'Ser', 'Szynka')
+    sandwich('Szynka', 'pomidor', 'kiełbasa')
+    
+def eight_13():
+    
+    def build_profile(first, last, **user_info):
+        """Budowa słownika zaweirającego wszelkie informacje o użytkowniku"""
+        user_info['first_name'] = first
+        user_info['last_name'] = last
+        return user_info
+    
+    user_profile = build_profile('dominik', 'pazurek',
+                                 location = 'Poland',
+                                 field = 'software enginner')
+    print(user_profile)
+    
+def eight_14():
+    
+    def make_car(brand, model, **car_info):
+        car_info['marka'] = brand
+        car_info['model'] = model
+        return car_info
+    
+    cars = make_car('Subaru', 'Impreza',
+                   color = 'blue',
+                   engine = '2.0')
+    
+    print(cars)
+
+eight_14()
