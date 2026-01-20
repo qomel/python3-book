@@ -321,3 +321,18 @@ def eight_2(title):
     print(f'Ulubiona książka: {title}')
 
 # eight_2('Python')
+
+def eight_3():
+    # Wyświetla rozmiar oraz tekst koszulki
+    def make_shirt(rozmair, tekst):
+        print(f'Zamówiłeś koszulke {rozmair.upper()} z tekstem: {tekst}')
+        
+    make_shirt(rozmair = 'L', tekst = 'Super L L L')
+
+
+def eight_4():
+    def make_shirt(rozmiar = 'L', tekst = 'Uwielbiam Python'):
+        print(f'Zamówiłeś koszulke {rozmiar.upper()} z tekstem: {tekst}')
+    
+    make_shirt('L')
+    make_shirt('m')
