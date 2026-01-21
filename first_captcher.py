@@ -488,4 +488,337 @@ def eight_14():
     
     print(cars)
 
-eight_14()
+def nine_1():
+    
+    class Restaurant:
+        
+        def __init__(self, restaurant_name, cuisine_type):
+            self.restaurant_name = restaurant_name
+            self.cuisine_type = cuisine_type
+            
+        def describer_restaurant(self):
+            print(f'Restuaracja: {self.restaurant_name}\nW stylu: {self.cuisine_type}')
+            
+        def open_restaurant(self):
+            print(f'Restauracja: {self.restaurant_name} otwiera się 10 godzinei')
+            
+    rest1 = Restaurant('Alohomora', 'Old')
+    rest2 = Restaurant('Oklahoma', 'Foodtruck')
+    
+    print(f'Super jest: {rest1.restaurant_name}')
+    rest1.describer_restaurant()
+    
+    print(f'Mają styl: {rest2.cuisine_type}')
+    rest2.open_restaurant()
+
+def nine_3():
+    
+    class User:
+        """Prezentacja prostego profilu uzytkownika"""
+        
+        def __init__(self, first_name, last_name, date_of_birth, user_name):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.date_of_birth = date_of_birth
+            self.user_name = user_name
+            
+        def describe_user(self):
+            full_name = f'{self.first_name} {self.last_name}'
+            print(f'\n---OPIS UŻYTKOWNIKA---'
+                  f'\n{full_name} | {self.user_name}'
+                  f'\nUrodzony: {self.date_of_birth}')
+            
+        def greet_user(self):
+            print(f'\nWitaj {self.user_name}')
+            
+    user1 = User('Dominik', 'Pazurek', '10.03.2002', 'qomel')
+    user1.describe_user()
+    user1.greet_user()
+    
+    user2 = User('Michalina', 'Knieja', '12.06.2003', 'misia')
+    user2.describe_user()
+    user2.greet_user()
+    
+def nine_4():
+    
+    class Restaurant:
+        
+        def __init__(self, restaurant_name, cuisine_type):
+            self.restaurant_name = restaurant_name
+            self.cuisine_type = cuisine_type
+            self.number_served = 0
+            
+        def describer_restaurant(self):
+            print(f'Restuaracja: {self.restaurant_name}\nW stylu: {self.cuisine_type}')
+            print(f'Akutalnie obsłużoncyh: {self.number_served}')
+        def open_restaurant(self):
+            print(f'Restauracja: {self.restaurant_name} otwiera się 10 godzinei')
+
+        def set_number_served(self, served):
+            """Przypisanie wartosci do obsłużoncyh"""
+            self.number_served = served
+        
+        def increment_number_served(self, total):
+            """Inkrementacja obsłużoncyh klinetów"""
+            self.number_served += total
+            
+    rest1 = Restaurant('Alohomora', 'Old')
+    rest2 = Restaurant('Oklahoma', 'Foodtruck')
+    
+    print(f'Super jest: {rest1.restaurant_name}')
+    rest1.describer_restaurant()
+    
+    print(f'Mają styl: {rest2.cuisine_type}')
+    rest2.open_restaurant()
+    
+    rest2.set_number_served(23)
+    rest2.describer_restaurant()
+    rest2.increment_number_served(10)
+    rest2.describer_restaurant()
+    
+def nine_5():
+    
+    class User:
+        """Prezentacja prostego profilu uzytkownika"""
+        
+        def __init__(self, first_name, last_name, date_of_birth, user_name):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.date_of_birth = date_of_birth
+            self.user_name = user_name
+            self.login_attempts = 0
+            
+        def describe_user(self):
+            full_name = f'{self.first_name} {self.last_name}'
+            print(f'\n---OPIS UŻYTKOWNIKA---'
+                  f'\n{full_name} | {self.user_name}'
+                  f'\nUrodzony: {self.date_of_birth}')
+            
+        def greet_user(self):
+            print(f'\nWitaj {self.user_name}')
+            
+        def increment_attempts(self):
+            """Inkrementacja prób logowania"""
+            self.login_attempts += 1
+        
+        def reset_attempts(self):
+            """Reset prób logowań"""
+            self.login_attempts = 0
+        
+        def show_attempts(self):
+            """Show a number of login attempts"""
+            print(f'{self.login_attempts}')
+        
+    user1 = User('Dominik', 'Pazurek', '10.03.2002', 'qomel')
+    user1.describe_user()
+    user1.greet_user()
+    
+    user2 = User('Michalina', 'Knieja', '12.06.2003', 'mknieja')
+    user2.describe_user()
+    user2.greet_user()
+    
+    user2.increment_attempts()
+    user2.increment_attempts()
+    user2.show_attempts()
+    user2.reset_attempts()
+    user2.show_attempts()
+    
+def nine_6():
+    
+    class Restaurant:
+        
+        def __init__(self, restaurant_name, cuisine_type):
+            self.restaurant_name = restaurant_name
+            self.cuisine_type = cuisine_type
+            self.number_served = 0
+            
+        def describer_restaurant(self):
+            print(f'Restuaracja: {self.restaurant_name}\nW stylu: {self.cuisine_type}')
+            print(f'Akutalnie obsłużoncyh: {self.number_served}')
+            
+        def open_restaurant(self):
+            print(f'Restauracja: {self.restaurant_name} otwiera się 10 godzinei')
+
+        def set_number_served(self, served):
+            """Przypisanie wartosci do obsłużoncyh"""
+            self.number_served = served
+        
+        def increment_number_served(self, total):
+            """Inkrementacja obsłużoncyh klinetów"""
+            self.number_served += total
+    
+    class IceCreamStand(Restaurant):
+        
+        def __init__(self, restaurant_name, cuisine_type):
+            super().__init__(restaurant_name, cuisine_type)
+            self.flavors = []
+        
+        def show_icecream(self):
+            for flavor in self.flavors:
+                print(flavor)
+        
+    rest1 = Restaurant('Alohomora', 'Old')
+    rest2 = Restaurant('Oklahoma', 'Foodtruck')
+    
+    print(f'Super jest: {rest1.restaurant_name}')
+    rest1.describer_restaurant()
+    
+    print(f'Mają styl: {rest2.cuisine_type}')
+    rest2.open_restaurant()
+    
+    rest3 = IceCreamStand('Lodowu Edek', 'Bar')
+    rest3.describer_restaurant()
+    rest3.flavors = ['vanilla', 'chocolate']
+    rest3.show_icecream()
+    
+def nine_7():
+    
+    class User:
+        """Prezentacja prostego profilu uzytkownika"""
+        
+        def __init__(self, first_name, last_name, date_of_birth, user_name):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.date_of_birth = date_of_birth
+            self.user_name = user_name
+            self.login_attempts = 0
+            
+        def describe_user(self):
+            full_name = f'{self.first_name} {self.last_name}'
+            print(f'\n---OPIS UŻYTKOWNIKA---'
+                  f'\n{full_name} | {self.user_name}'
+                  f'\nUrodzony: {self.date_of_birth}')
+            
+        def greet_user(self):
+            print(f'\nWitaj {self.user_name}')
+            
+        def increment_attempts(self):
+            """Inkrementacja prób logowania"""
+            self.login_attempts += 1
+        
+        def reset_attempts(self):
+            """Reset prób logowań"""
+            self.login_attempts = 0
+        
+        def show_attempts(self):
+            """Show a number of login attempts"""
+            print(f'{self.login_attempts}')
+        
+    class Admin(User):
+        
+        def __init__(self, first_name, last_name, date_of_birth, user_name):
+            super().__init__(first_name, last_name, date_of_birth, user_name)
+
+            self.privileges = Privileges()
+            
+    class Privileges():
+        
+        def __init__(self, privileges = []):
+            self.privileges = privileges
+        
+        def show_privileges(self):
+            if self.privileges:
+                for privilege in self.privileges:
+                    print(privilege) 
+            else:
+                print('User dont have privileges')        
+        
+    user1 = User('Dominik', 'Pazurek', '10.03.2002', 'qomel')
+    user1.describe_user()
+    user1.greet_user()
+    
+    user2 = User('Michalina', 'Knieja', '12.06.2003', 'mknieja')
+    user2.describe_user()
+    user2.greet_user()
+    
+    user3 = Admin('Kamil', 'Pazurek', '22.09.2010', 'kapek')
+    user3.describe_user()
+
+    user3_privileges = [
+        'ban',
+        'unban'
+    ]
+    user3.privileges.privileges = user3_privileges
+    user3.privileges.show_privileges()
+    
+def nine_9():
+    
+    class Car:
+        """A simple attempt to represent a car."""
+
+        def __init__(self, make, model, year):
+            """Initialize attributes to describe a car."""
+            self.make = make
+            self.model = model
+            self.year = year
+            self.odometer_reading = 0
+
+        def get_descriptive_name(self):
+            """Return a neatly formatted descriptive name."""
+            long_name = f"{self.year} {self.make} {self.model}"
+            return long_name.title()
+
+        def read_odometer(self):
+            """Print a statement showing the car's mileage."""
+            print(f"This car has {self.odometer_reading} miles on it.")
+
+        def update_odometer(self, mileage):
+            """Set the odometer reading to the given value."""
+            if mileage >= self.odometer_reading:
+                self.odometer_reading = mileage
+            else:
+                print("You can't roll back an odometer!")
+
+        def increment_odometer(self, miles):
+            """Add the given amount to the odometer reading."""
+            self.odometer_reading += miles
+
+
+    class Battery:
+        """A simple attempt to model a battery for an electric car."""
+
+        def __init__(self, battery_size=40):
+            """Initialize the battery's attributes."""
+            self.battery_size = battery_size
+
+        def describe_battery(self):
+            """Print a statement describing the battery size."""
+            print(f"This car has a {self.battery_size}-kWh battery.")
+
+        def get_range(self):
+            """Print a statement about the range this battery provides."""
+            if self.battery_size == 40:
+                range = 150
+            elif self.battery_size == 65:
+                range = 225
+
+            print(f"This car can go about {range} miles on a full charge.")
+
+        def upgrade_battery(self):
+            if self.battery_size == 40:
+                print('Changing accumulator on better one')
+                self.battery_size = 65
+            else:
+                print('You had the best accumulator in car')
+                
+    class ElectricCar(Car):
+        """Represent aspects of a car, specific to electric vehicles."""
+
+        def __init__(self, make, model, year):
+            """
+            Initialize attributes of the parent class.
+            Then initialize attributes specific to an electric car.
+            """
+            super().__init__(make, model, year)
+            self.battery = Battery()
+
+
+    my_leaf = ElectricCar('nissan', 'leaf', 2024)
+    print(my_leaf.get_descriptive_name())
+    my_leaf.battery.describe_battery()
+    my_leaf.battery.get_range()
+    
+    my_leaf.battery.upgrade_battery()
+    my_leaf.battery.get_range()
+
+nine_9()
