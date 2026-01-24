@@ -29,4 +29,34 @@ def ten_3():
     
     print(contents_str)
     print(len(contents_str))
-ten_3()
+    
+def ten_4():
+    contents = input('Jak masz na imie: ')
+    
+    path = Path('guest.txt')
+    path.write_text(contents)
+
+def ten_5():
+    path = Path('guest_book.txt')
+    
+    msg = 'Podaj imie: '
+    msg += 'q do wyjścia'
+    
+    guest_name = []
+     
+    while True:
+        name = input(msg)
+        if name == 'q':
+            break
+        
+        print(f'Witaj {name}')
+        guest_name.append(name)
+    
+    file_string = ''
+
+    for name in guest_name:
+        file_string += f'{name} \n'
+        
+    path.write_text(file_string)
+
+ten_5()
